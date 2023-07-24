@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageId>CapMonster.Cloud</PackageId>
+        <Version>1.0.0-alpha</Version>
+        <Authors>Alperen Sert</Authors>
+        <Company>Alperen Sert</Company>
+        <PackageTags>Capmonster,ReCaptcha v2 solver, Bypass captcha, anti-captcha,</PackageTags>
+        <Description>Capmonster.cloud Library for .NET Core</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/alperensert/CapMonster.Cloud</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/alperensert/CapMonster.Cloud</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RespositoryType>git</RespositoryType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <None Include="../README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+**/bin
+**/obj
+**/.idea
+**/.runsettings
+**/.git
+**/*.sln.DotSettings.user
