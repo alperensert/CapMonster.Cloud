@@ -71,6 +71,25 @@ public class CapMonsterClient
         var r = await CheckResponse<GetBalance>(response);
         return r.Balance;
     }
+
+    public async Task<bool> ReportIncorrectCaptcha(CaptchaTypes captchaType, int taskId)
+    {
+        var data = new VanillaTask(_clientKey)
+        {
+            TaskId = taskId
+        };
+        var endpoint = captchaType switch
+        {
+            CaptchaTypes.Image => Endpoints.IncorrectImageCaptcha,
+            CaptchaTypes.Token => Endpoints.IncorrectTokenCaptcha,
+            CaptchaTypes.ReCaptcha => Endpoints.IncorrectTokenCaptcha,
+            CaptchaTypes.HCaptcha => Endpoints.IncorrectTokenCaptcha,
+            _ => throw new ArgumentOutOfRangeException(nameof(captchaType), captchaType, null)
+        };
+        var response = await MakeRequest(endpoint, JsonConvert.SerializeObject(data));
+        CheckResponse(JsonConvert.DeserializeObject<ErrorResponse>(await response.Content.ReadAsStringAsync()));
+        return true;
+    }
     
     public async Task<TaskResponse<T>> GetTaskResultAsync<T>(int taskId) where T : ITaskResponse
     {

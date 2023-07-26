@@ -17,7 +17,7 @@ dotnet add package CapMonster.Cloud --version 1.0.0
 
 via adding PackageReference:
 ```xml
-<PackageReference Include="CapMonster.Cloud" Version="1.0.0-alpha" />
+<PackageReference Include="CapMonster.Cloud" Version="1.0.0" />
 ```
 For projects that support PackageReference, copy this XML node into the project file to reference the package.
 

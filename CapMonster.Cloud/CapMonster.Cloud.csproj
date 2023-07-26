@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>CapMonster.Cloud</PackageId>
-        <Version>1.0.0-alpha</Version>
+        <Version>1.0.0</Version>
         <Authors>Alperen Sert</Authors>
         <Company>Alperen Sert</Company>
         <PackageTags>Capmonster,ReCaptcha v2 solver, Bypass captcha, anti-captcha,</PackageTags>
@@ -19,7 +19,7 @@
 
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-        <None Include="../README.md" Pack="true" PackagePath="\"/>
+        <None Include="../README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
 </Project>

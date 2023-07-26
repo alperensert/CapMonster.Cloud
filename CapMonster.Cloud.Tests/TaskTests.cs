@@ -1,6 +1,7 @@
 ﻿using CapMonster.Cloud.Models;
 using CapMonster.Cloud.Tasks;
 using CapMonster.Cloud.Tasks.Responses;
+using CapMonster.Cloud.Utilities;
 
 namespace CapMonster.Cloud.Tests;
 
@@ -71,7 +72,7 @@ public class TaskTests
     {
         var client = new CapMonsterClient(Environment.GetEnvironmentVariable("APIKEY")!);
         UseProxy(client, useProxy);
-        var task = new FunCaptchaTask(websiteUrl, websiteKey);
+        var task = new HCaptchaTask(websiteUrl, websiteKey);
         var id = await client.CreateTask(task);
         Assert.IsType<int>(id);
         var response = await client.JoinTaskResult<HCaptchaResponse>(id);
